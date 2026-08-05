@@ -1,0 +1,237 @@
+/* ==========================================
+   PÁGINA DELIVERY
+   ========================================== */
+.delivery-page {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 10rem 1.5rem 4rem 1.5rem; /* Margen superior para liberar el Header */
+  min-height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Capa oscura y borrosa */
+.delivery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.delivery-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.delivery-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.delivery-hero .subtitle {
+  color: #dddddd;
+  font-size: 1.15rem;
+  margin-bottom: 3rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================
+   BLOQUE 1: APP PROPIA
+   ========================================== */
+.app-section {
+  position: relative;
+  background-color: rgba(26, 26, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.app-badge-tag {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.app-section h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.app-section p {
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 550px;
+  margin: 0 auto 2rem auto;
+}
+
+/* ==========================================
+   BOTONES DE TIENDAS (SVG + CSS)
+   ========================================== */
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.store-btn:hover {
+  transform: translateY(-3px);
+  border-color: #ffffff;
+  background-color: #111111;
+}
+
+.store-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.15;
+}
+
+.btn-text .subtext {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #bbbbbb;
+  font-weight: 500;
+}
+
+.btn-text .maintext {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+
+/* ==========================================
+   BLOQUE 2: APPS EXTERNAS
+   ========================================== */
+.external-delivery-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.external-delivery-section p {
+  color: #aaaaaa;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.platforms-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.platform-card {
+  background-color: rgba(26, 26, 26, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 220px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(35, 35, 35, 0.9);
+}
+
+.logo-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .delivery-page {
+    padding-top: 7rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .delivery-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .platforms-grid {
+    gap: 1rem;
+  }
+
+  .platform-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}

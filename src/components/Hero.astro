@@ -1,0 +1,30 @@
+---
+import "../styles/Hero.css";
+
+import heroImage from "../assets/hero.webp";
+---
+
+
+<section
+  class="hero"
+  style={`background-image: url('${heroImage.src}')`}
+>
+  <div class="overlay"></div>
+
+  <div class="container hero-content">
+    <h1>
+      The True<br />
+      American<br />
+      Taste
+    </h1>
+
+    <p>
+      Descubre la mejor calidad y sabor.
+    </p>
+
+    <div class="buttons">
+      <a href="/delivery" class="btn-white">Hacer un pedido</a>
+      <a href="#main" class="btn-transparent">Conocer más</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,170 @@
+/* ==========================================
+   PÁGINA DE SUCURSALES
+   ========================================== */
+.sucursales-page {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 10rem 1.5rem 4rem 1.5rem; /* Padding superior para esquivar el Header */
+  min-height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Capa oscura y borrosa */
+.sucursales-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.sucursales-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sucursales-page h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sucursales-page p {
+  color: #dddddd;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Grilla de Sucursales */
+.sucursales-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Tarjetas individuales */
+.sucursal-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.sucursal-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(30, 30, 30, 0.95);
+}
+
+.sucursal-card h2 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.info-item {
+  color: #cccccc !important;
+  margin: 0.5rem 0 !important;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Agrega estos estilos al final de tu sucursales.css */
+
+.map-container {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(20%) contrast(1.1); /* Efecto leve para entonar con el tema oscuro */
+  transition: filter 0.3s ease;
+}
+
+.map-container:hover iframe {
+  filter: grayscale(0%);
+}
+
+.card-details {
+  flex-grow: 1; /* Permite que el contenido ocupe el espacio antes de los botones */
+}
+
+/* Botones de acción */
+.card-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn-action {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1da851;
+}
+
+.btn-maps {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-maps:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sucursales-page {
+    padding-top: 7rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .sucursales-page h1 {
+    font-size: 2.2rem;
+  }
+}

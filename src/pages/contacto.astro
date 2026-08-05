@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/contacto.css";
+
+import cartelImage from "../assets/cartel.jpg";
+---
+
+<Layout title="Contacto | Frich">
+  <Header />
+
+  <main class="contacto-page" style={`background-image: url('${cartelImage.src}')`}>
+    <div class="contacto-overlay"></div>
+
+    <!-- Cambiado 'container' a 'contacto-container' -->
+    <div class="contacto-container contacto-content">
+      <h1>Contacto</h1>
+      <p>¡Queremos saber de vos! Elegí la sucursal más cercana o dejanos tu mensaje. <br>
+        ¡Podes realizar tu pedido por mensaje y retirarlo presencial cuando este listo!
+      </p>
+
+      <div class="contacto-grid">
+        <div class="sucursales">
+          <h2>Nuestros Locales</h2>
+          
+          <div class="local-card">
+            <h3>Nueva Córdoba</h3>
+            <p>📍 Ituzaingó 909, Nueva Córdoba</p>
+            <p>📞 +54 9 351 614-2090</p>
+            <a href="https://wa.me/5493516142090" target="_blank" class="btn-whatsapp">Escribir por WhatsApp</a>
+          </div>
+
+          <div class="local-card">
+            <h3>Valle Escondido</h3>
+            <p>📍 Av. República de China 1400, Córdoba</p>
+            <p>📞 +54 9 351 215 1167</p>
+            <a href="https://wa.me/5493512151167" target="_blank" class="btn-whatsapp">Escribir por WhatsApp</a>
+          </div>
+
+          <div class="local-card">
+            <h3>Jesús María</h3>
+            <p>📍 5220, P.º del Huerto 99, Jesus María, Córdoba</p>
+            <p>📞 +54 9 3525 55-5050</p>
+            <a href="https://wa.me/5493525555050" target="_blank" class="btn-whatsapp">Escribir por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

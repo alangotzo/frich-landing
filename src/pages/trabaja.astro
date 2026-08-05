@@ -1,0 +1,103 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/trabaja.css";
+
+import cartelImage from "../assets/team1.jpg";
+import teamImage from "../assets/team2.jpg"; // Importamos la nueva imagen
+
+const mailContacto = "frichcultura@gmail.com"; 
+---
+
+<Layout title="Trabajá con Nosotros | Frich">
+  <Header />
+
+  <main class="trabaja-page" style={`background-image: url('${cartelImage.src}')`}>
+    <div class="trabaja-overlay"></div>
+
+    <div class="trabaja-container trabaja-content">
+      <section class="trabaja-hero">
+        <h1>Sumate al Equipo</h1>
+        <p class="subtitle">Buscamos gente con ganas de crecer, apasionada y con buena onda.</p>
+        
+        <!-- Imagen del equipo -->
+        <div class="hero-image-container">
+          <img src={teamImage.src} alt="Trabajando en la cocina de Frich" class="hero-team-image" />
+        </div>
+      </section>
+
+      <!-- Bloque Principal de Contacto -->
+      <section class="cv-card">
+        <div class="cv-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+
+        <h2>Enviarnos tu CV</h2>
+        <p>
+          Si querés formar parte de la familia Frich, mandanos tu currículum vitae indicando en el asunto el puesto y la zona de tu interés. 
+        </p>
+
+        <!-- Botón interactivo -->
+        <button id="send-email-btn" class="email-button" data-email={mailContacto}>
+          {mailContacto}
+        </button>
+
+        <span id="feedback-text" class="tip-text">Hacé clic para redactar el correo o copiar la dirección.</span>
+      </section>
+
+      <!-- Script client-side actualizado -->
+      <script>
+        const emailBtn = document.getElementById('send-email-btn');
+        const feedbackText = document.getElementById('feedback-text');
+
+        emailBtn?.addEventListener('click', async () => {
+          const email = emailBtn.getAttribute('data-email');
+          if (!email) return;
+
+          const subject = encodeURIComponent('Postulación Laboral - Frich');
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+          //  En móviles usamos mailto: para que abra la App nativa de correo (Gmail, Mail de iOS, etc.)
+          // En escritorio abre Gmail Web directamente en una nueva pestaña con el mail y asunto listos.
+          if (isMobile) {
+            window.location.href = `mailto:${email}?subject=${subject}`;
+          } else {
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`;
+            window.open(gmailUrl, '_blank');
+          }
+
+          // Copiamos al portapapeles como respaldo
+          try {
+            await navigator.clipboard.writeText(email);
+            if (feedbackText) {
+              feedbackText.textContent = '¡Email copiado al portapapeles!';
+              feedbackText.style.color = '#4CAF50';
+
+              setTimeout(() => {
+                feedbackText.textContent = 'Hacé clic para redactar el correo o copiar la dirección.';
+                feedbackText.style.color = '#888888';
+              }, 4000);
+            }
+          } catch (err) {
+            console.error('Error al copiar el mail:', err);
+          }
+        });
+      </script>
+
+      <!-- Puestos Habituales -->
+      <section class="puestos-section">
+        <h3>Áreas en constante búsqueda</h3>
+        <ul class="puestos-list">
+          <li>Atención al Cliente y Caja</li>
+          <li>Runner</li>
+          <li>Cocina y Producción</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,252 @@
+/* ==========================================
+   PÁGINA SOBRE NOSOTROS
+   ========================================== */
+.nosotros-page {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 10rem 1.5rem 4rem 1.5rem; /* Padding superior para esquivar el Header */
+  min-height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Capa oscura y borrosa */
+.nosotros-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.nosotros-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nosotros-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nosotros-hero .subtitle {
+  color: #dddddd;
+  font-size: 1.15rem;
+  margin-bottom: 3rem;
+}
+
+/* ==========================================
+   SECCIÓN HISTORIA (CON IMAGEN)
+   ========================================== */
+.historia-section {
+  background-color: rgba(26, 26, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.historia-section h2 {
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.historia-grid {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.historia-image-container {
+  flex: 0 0 40%;
+  max-width: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.historia-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.historia-image-container:hover .historia-image {
+  transform: scale(1.03);
+}
+
+.historia-text {
+  flex: 1;
+}
+
+.historia-text p {
+  color: #cccccc;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.historia-text p strong {
+  color: #ffffff;
+}
+
+.historia-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   SECCIÓN PILARES / VALORES
+   ========================================== */
+.pilares-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.pilar-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.pilar-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.pilar-card h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.pilar-card p {
+  color: #bbbbbb;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================
+   SECCIÓN CTA (CALL TO ACTION)
+   ========================================== */
+.nosotros-cta {
+  background-color: rgba(26, 26, 26, 0.6);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.nosotros-cta h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.nosotros-cta p {
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  font-size: 0.98rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .nosotros-page {
+    padding-top: 7rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .nosotros-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Apilado en mobile para la historia */
+  .historia-grid {
+    flex-direction: column;
+  }
+
+  .historia-image-container {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+  .pilar-card:last-child {
+    grid-column: 1 / -1; 
+    justify-self: center; 
+    max-width: calc(50% - 0.75rem); 
+    width: 100%;
+  }
+}

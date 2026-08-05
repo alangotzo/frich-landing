@@ -6,7 +6,10 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Frich 'n Fries</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<slot />
@@ -20,4 +23,17 @@
 		width: 100%;
 		height: 100%;
 	}
+	
+</style>
+
+<style is:global>
+  :root {
+    --font-main: 'Google Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+  }
 </style>

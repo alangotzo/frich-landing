@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/ayuda.css";
+
+import cartelImage from "../assets/cartel.jpg";
+
+// Lista de preguntas frecuentes
+const faqs = [
+  {
+    pregunta: "¿Cuáles son las formas de pago aceptadas?",
+    respuesta: "Aceptamos efectivo, tarjetas de débito y crédito, Mercado Pago, transferencias y pagos a través de nuestra App. ¡Abonando en efectivo tenes 10% de descuento!"
+  },
+  {
+    pregunta: "¿Cómo funciona el envío a domicilio / Delivery?",
+    respuesta: "Podés hacer tu pedido directamente desde nuestra App o a través de nuestras apps asociadas (Pedidos Ya, Rappi). El tiempo estimado de entrega es entre 20 y 30 minutos según la zona."
+  },
+  {
+    pregunta: "¿Puedo retirar mi pedido por el local (Take Away)?",
+    respuesta: "¡Sí! Podés realizar tu pedido online desde Whatsapp avisando que realizas el retiro en el local y pasas a buscarlo por la sucursal más cercana sin demoras."
+  },
+  {
+    pregunta: "¿Tienen opciones vegetarianas o sin TACC?",
+    respuesta: "Contamos con opciones vegetarianas claramente señaladas en nuestro menú. NO contamos con opciones sin TACC."
+  },
+  {
+    pregunta: "¿Qué hago si tuve un problema con mi pedido?",
+    respuesta: "Si tu pedido llegó con algún inconveniente o incompleto, por favor comunicate inmediatamente al WhatsApp de la sucursal donde realizaste la compra para resolverlo en el acto."
+  }
+];
+---
+
+<Layout title="Centro de Ayuda | Frich">
+  <Header />
+
+  <main class="ayuda-page" style={`background-image: url('${cartelImage.src}')`}>
+    <div class="ayuda-overlay"></div>
+
+    <div class="ayuda-container ayuda-content">
+      <h1>Centro de Ayuda</h1>
+      <p>Encontrá respuestas rápidas a las dudas más comunes sobre nuestros servicios y productos.</p>
+
+      <!-- Acordeón de preguntas frecuentes -->
+      <div class="faq-container">
+        <h2>Preguntas Frecuentes</h2>
+
+        <div class="faq-list">
+          {faqs.map((faq, index) => (
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>{faq.pregunta}</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                <p>{faq.respuesta}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Sección de soporte directo -->
+      <div class="contacto-directo">
+        <h3>¿No encontraste lo que buscabas?</h3>
+        <p>Escribinos directamente a nuestro equipo de soporte.</p>
+        <a href="/contacto" class="btn-contacto">Ir a Contacto</a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

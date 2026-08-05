@@ -1,0 +1,196 @@
+/* ==========================================
+   PÁGINA TRABAJÁ CON NOSOTROS
+   ========================================== */
+.trabaja-page {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 10rem 1.5rem 4rem 1.5rem;
+  min-height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.trabaja-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.trabaja-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.trabaja-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.trabaja-hero .subtitle {
+  color: #dddddd;
+  font-size: 1.15rem;
+  margin-bottom: 3rem;
+}
+
+/* Estilos para la imagen del equipo en el Hero */
+.hero-image-container {
+  max-width: 500px;
+  max-height: 400px;
+  margin: 0 auto 3rem auto;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.hero-team-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.hero-image-container:hover .hero-team-image {
+  transform: scale(1.03);
+}
+
+/* ==========================================
+   TARJETA CV / EMAIL
+   ========================================== */
+.cv-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cv-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+}
+
+.cv-card h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.cv-card p {
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 0 2rem 0;
+}
+
+.email-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  word-break: break-all;
+  cursor: pointer;
+  border: none;
+}
+
+.email-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.tip-text {
+  display: block;
+  font-size: 0.8rem;
+  color: #888888;
+  margin-top: 1rem;
+}
+
+/* ==========================================
+   ÁREAS DE TRABAJO
+   ========================================== */
+.puestos-section h3 {
+  font-size: 1.2rem;
+  color: #dddddd;
+  margin-bottom: 1rem;
+}
+
+.puestos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.puestos-list li {
+  background-color: rgba(26, 26, 26, 0.6);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trabaja-page {
+    padding-top: 7rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .trabaja-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .email-button {
+    font-size: 1rem;
+    padding: 0.85rem 1.25rem;
+  }
+}

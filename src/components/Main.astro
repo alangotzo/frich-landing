@@ -1,0 +1,106 @@
+---
+import "../styles/Main.css";
+
+import burgerImage from "../assets/burger.jpg";
+import logoImage from "../assets/logo2.jpg"; // Asegurate de ajustar la ruta/nombre de la primera imagen
+import { Image } from "astro:assets";
+import cartelImage from "../assets/cartel.jpg";
+---
+
+<main id="main">
+  <section class="main">
+    <div class="container main-content">
+      <div class="text-side">
+        <a href="https://drive.google.com/drive/u/0/folders/13phvibzb3c1ECugDGOKeXQEQ2UYQI1Ax" class="btn-red">
+          Nuestras hamburguesas
+        </a>
+      </div>
+
+      <div class="image-side">
+        <Image src={burgerImage} alt="Hamburguesa doble con queso" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección para descargar la App -->
+  <section class="app-section">
+    <div class="container app-content">
+      
+      <div class="app-image-side">
+        <Image src={logoImage} alt="Frich Original American Taste Logo" class="app-logo" />
+      </div>
+
+      <div class="app-text-side">
+        <h2>Descargá nuestra App</h2>
+        <p>Pedí tus hamburguesas favoritas más rápido y accede a descuentos exclusivos.</p>
+
+        <div class="store-buttons">
+          <!-- Botón App Store -->
+          <a href="https://apps.apple.com/ar/app/frich/id6499274163" class="store-btn" aria-label="Descargar en App Store">
+            <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.66-.8 1.11-1.92.99-3.04-.96.04-2.13.64-2.81 1.44-.61.71-1.14 1.86-1 2.97 1.08.08 2.16-.57 2.82-1.37z"/>
+            </svg>
+            <div class="btn-text">
+              <span class="subtext">Download on the</span>
+              <span class="maintext">App Store</span>
+            </div>
+          </a>
+
+          <!-- Botón Google Play -->
+          <a href="https://play.google.com/store/apps/details?id=com.frichsfries.app&pcampaignid=web_share&pli=1" class="store-btn" aria-label="Consíguelo en Google Play">
+            <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 20.5v-17c0-.55.33-.94.8-.73l12.42 8.78c.42.24.42.82 0 1.06L3.8 21.23c-.47.21-.8-.18-.8-.73zm13.79-8.5L14 9.17l-2.6 2.63 2.6 2.63 2.79-2.43zm2.14-1.37l2.27 1.32c.45.26.45.92 0 1.18l-2.27 1.32-2.3-2.3 2.3-2.52z"/>
+            </svg>
+            <div class="btn-text">
+              <span class="subtext">GET IT ON</span>
+              <span class="maintext">Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+</main>
+
+<section class="social-hero" style={`background-image: url('${cartelImage.src}')`}>
+  <!-- Overlay oscuro con efecto borroso -->
+  <div class="social-overlay"></div>
+
+  <div class="container social-content">
+    
+    <!-- Lado Izquierdo: Texto y Botones de Redes Sociales -->
+    <div class="social-text-side">
+      <h2>¡Sumate a nuestra comunidad!</h2>
+      <p>Seguinos en redes sociales para enterarte de novedades y promociones.</p>
+
+      <div class="social-buttons">
+        <!-- Botón Instagram -->
+        <a href="https://instagram.com/frich.hamburguesas/" target="_blank" rel="noopener noreferrer" class="social-btn instagram-btn">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <!-- Botón Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=100064956211077&locale=es_LA" target="_blank" rel="noopener noreferrer" class="social-btn facebook-btn">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Imagen del Cartel destacada -->
+    <div class="social-image-side">
+      <Image src={cartelImage} alt="Cartel de Frich de neón" class="featured-cartel" />
+    </div>
+
+  </div>
+</section>
+

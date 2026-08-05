@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/sucursales.css";
+
+import cartelImage from "../assets/chicken.jpg";
+
+const sucursales = [
+  {
+    nombre: "Nueva Córdoba",
+    direccion: "Ituzaingó 909, Nueva Córdoba",
+    horarios: "Todos los dias: 20:00 a 00:00 hs",
+    telefono: "+54 9 351 614-2090",
+    whatsapp: "https://wa.me/5493516142090",
+    mapsLink: "https://maps.app.goo.gl/ugmmi1wQsXioZvtWA",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.662058428587!2d-64.1887201234125!3d-31.4233827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2817bf495d7%3A0x86ddaa1ef14a5efb!2sItuzaing%C3%B3%20909%2C%20X5000%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar"
+  },
+  {
+    nombre: "Valle Escondido",
+    direccion: "Valle Escondido, Córdoba",
+    horarios: "Todos los dias: 20:00 a 00:00 hs",
+    telefono: "+54 9 351 215 1167",
+    whatsapp: "https://wa.me/5493512151167",
+    mapsLink: "https://maps.app.goo.gl/rb9nst9mgrbYVVbE8",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.494996976402!2d-64.2768584!3d-31.372912100000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329f001a3b5979%3A0x8d09d24d20750fae!2z8J2YjfCdkZ_wnZGW8J2RkOKEjiAn8J2QjSDwnZCF8J2QkfCdkIjwnZCE8J2QkiDigJMg4bSA4bSN4bSHyoDJquG0hOG0gMm0IMqZ4bScyoDJouG0h8qAcyBbVmFsbGUgRXNjb25kaWRvXQ!5e0!3m2!1ses-419!2sar"
+  },
+  {
+    nombre: "Jesús María",
+    direccion: "Jesús María, Córdoba",
+    horarios: "Todos los días: 12:00 a 15:00 hs y 20:00 a 00:00 hs",
+    telefono: "+54 9 3525 55-5050",
+    whatsapp: "https://wa.me/5493525555050",
+    mapsLink: "https://maps.app.goo.gl/EKDmBJbMav48bhB77",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3420.8172863779114!2d-64.0948394236393!3d-30.975580674468144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94326394dd1c637b%3A0x9da5fa2f4a25fda3!2z8J2YjfCdkZ_wnZGW8J2RkOKEjiAn8J2QjSDwnZCF8J2QkfCdkIjwnZCE8J2QkiDigJMg4bSA4bSN4bSHyoDJquG0hOG0gMm0IMqZ4bScyoDJouG0h8qAcyBbSmVzw7pzIE1hcsOtYV0!5e0!3m2!1ses-419!2sar"
+  }
+];
+---
+
+<Layout title="Sucursales | Frich">
+  <Header />
+
+  <main class="sucursales-page" style={`background-image: url('${cartelImage.src}')`}>
+    <div class="sucursales-overlay"></div>
+
+    <div class="sucursales-container sucursales-content">
+      <h1>Nuestras Sucursales</h1>
+      <p>Encontrá tu local Frich más cercano y vení a disfrutar la mejor experiencia.</p>
+
+      <div class="sucursales-grid">
+        {sucursales.map((local) => (
+          <div class="sucursal-card">
+            <h2>{local.nombre}</h2>
+            
+            <div class="map-container">
+              <iframe
+                src={local.mapEmbedUrl}
+                width="100%"
+                height="180"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <div class="card-details">
+              <p class="info-item">📍 <span>{local.direccion}</span></p>
+              <p class="info-item">🕒 <span>{local.horarios}</span></p>
+              <p class="info-item">📞 <span>{local.telefono}</span></p>
+            </div>
+
+            <div class="card-buttons">
+              <a href={local.whatsapp} target="_blank" rel="noopener noreferrer" class="btn-action btn-whatsapp">
+                WhatsApp
+              </a>
+              <a href={local.mapsLink} target="_blank" rel="noopener noreferrer" class="btn-action btn-maps">
+                Abrir en Maps
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

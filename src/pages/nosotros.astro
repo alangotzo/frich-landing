@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/nosotros.css";
+
+import cartelImage from "../assets/cartel.jpg";
+import fundadoresImage from "../assets/brothers.jpg"; 
+
+const pilares = [
+  {
+    titulo: "Calidad Premium",
+    descripcion: "Seleccionamos minuciosamente cada ingrediente para garantizar la mejor textura y sabor en cada preparación."
+  },
+  {
+    titulo: "Pasión por el Sabor",
+    descripcion: "Recetas desarrolladas con dedicación, manteniendo el equilibrio perfecto de sabores que nos identifica."
+  },
+  {
+    titulo: "Buena Onda",
+    descripcion: "Nos enfocamos en brindar una experiencia cercana y relajada, tanto en nuestros locales como en tu casa."
+  }
+];
+---
+
+<Layout title="Nosotros | Frich">
+  <Header />
+
+  <main class="nosotros-page" style={`background-image: url('${cartelImage.src}')`}>
+    <div class="nosotros-overlay"></div>
+
+    <div class="nosotros-container nosotros-content">
+      <section class="nosotros-hero">
+        <h1>Sobre Nosotros</h1>
+        <p class="subtitle">Conocé la historia y la pasión detrás de Frich.</p>
+      </section>
+
+      <!-- Sección de la Historia con Imagen -->
+      <section class="historia-section">
+        <h2>Nuestra Historia</h2>
+        
+        <div class="historia-grid">
+          <div class="historia-image-container">
+            <img 
+              src={fundadoresImage.src} 
+              alt="Fundadores de Frich" 
+              class="historia-image"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="historia-text">
+            <p>
+              En <strong>Frich</strong> nacimos con una idea clara: revolucionar la experiencia gastronómica combinando ingredientes de primera calidad con un ambiente relajado y auténtico.
+            </p>
+            <p>
+              Lo que comenzó como un proyecto enfocado en la búsqueda de la combinación perfecta de sabores, hoy se convirtió en un punto de encuentro en distintas sucursales. Nos apasiona cuidar cada detalle, desde el primer bocado hasta la atención al cliente.
+            </p>
+            <p>Disfrutá el sabor de una verdadera experiencia americana.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grilla de Pilares / Valores -->
+      <section class="pilares-section">
+        <h2>Lo que nos mueve</h2>
+        <div class="pilares-grid">
+          {pilares.map((pilar) => (
+            <div class="pilar-card">
+              <h3>{pilar.titulo}</h3>
+              <p>{pilar.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="nosotros-cta">
+        <h3>¿Querés ser parte de la experiencia?</h3>
+        <p>Vení a conocer nuestras sucursales o pedí directamente desde tu casa.</p>
+        <div class="cta-buttons">
+          <a href="/sucursales" class="btn-primary">Ver Sucursales</a>
+          <a href="/contacto" class="btn-secondary">Contacto</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
