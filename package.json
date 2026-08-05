@@ -5,6 +5,7 @@
   "engines": {
     "node": ">=22.12.0"
   },
+  "homepage": "https://alangotzo.github.io/frich-page",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
