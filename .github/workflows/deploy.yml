@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # Cambiá a 'master' si tu rama principal se llama master
+    branches: [ master ] # Cambiá a 'master' si tu rama principal se llama master
 
   # Permite ejecutar este workflow manualmente desde la pestaña Actions de GitHub
   workflow_dispatch:
