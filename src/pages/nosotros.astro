@@ -6,6 +6,7 @@ import "../styles/nosotros.css";
 
 import cartelImage from "../assets/cartel.jpg";
 import fundadoresImage from "../assets/brothers.jpg"; 
+const base = import.meta.env.BASE_URL;
 
 const pilares = [
   {
@@ -79,8 +80,8 @@ const pilares = [
         <h3>¿Querés ser parte de la experiencia?</h3>
         <p>Vení a conocer nuestras sucursales o pedí directamente desde tu casa.</p>
         <div class="cta-buttons">
-          <a href="/sucursales" class="btn-primary">Ver Sucursales</a>
-          <a href="/contacto" class="btn-secondary">Contacto</a>
+          <a href=`${base}/sucursales/` class="btn-primary">Ver Sucursales</a>
+          <a href=`${base}/contacto/` class="btn-secondary">Contacto</a>
         </div>
       </section>
     </div>

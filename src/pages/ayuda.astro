@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/ayuda.css";
 
 import cartelImage from "../assets/cartel.jpg";
+const base = import.meta.env.BASE_URL;
 
 // Lista de preguntas frecuentes
 const faqs = [
@@ -64,7 +65,7 @@ const faqs = [
       <div class="contacto-directo">
         <h3>¿No encontraste lo que buscabas?</h3>
         <p>Escribinos directamente a nuestro equipo de soporte.</p>
-        <a href="/contacto" class="btn-contacto">Ir a Contacto</a>
+        <a href=`${base}/contacto/` class="btn-contacto">Ir a Contacto</a>
       </div>
     </div>
   </main>
