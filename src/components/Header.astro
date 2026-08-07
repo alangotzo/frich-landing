@@ -2,20 +2,20 @@
 import { Image } from 'astro:assets';
 import myLogo from '../assets/logo.png';
 import "../styles/Header.css";
-
+const base = import.meta.env.BASE_URL;
 // Enlaces visibles en la barra principal
 const mainNavItems = [
-  { name: "Inicio", href: "./" },
-  { name: "Sucursales", href: "./sucursales" },
-  { name: "Contacto", href: "./contacto" },
+{ name: "Inicio", href: `${base}/` },
+  { name: "Sucursales", href: `${base}/sucursales/` },
+  { name: "Contacto", href: `${base}/contacto/` },
 ];
 
 // Enlaces exclusivos del menú hamburguesa
 const drawerItems = [
-  { name: "Ayuda", href: "./ayuda" },
-  { name: "Trabaja con nosotros", href: "./trabaja" },
-  { name: "Delivery", href: "./delivery" },
-  { name: "Nosotros", href: "./nosotros" },
+  { name: "Ayuda", href: `${base}/ayuda/` },
+  { name: "Trabaja con nosotros", href: `${base}/trabaja/` },
+  { name: "Delivery", href: `${base}/delivery/` },
+  { name: "Nosotros", href: `${base}/nosotros/` },
 ];
 ---
 
@@ -30,7 +30,7 @@ const drawerItems = [
       </button>
 
       <!-- Logo -->
-      <a href="/" class="logo">
+      <a href=`${base}/` class="logo">
         <Image src={myLogo} alt="Logo Frich" class="logo-img" />
       </a>
     </div>
