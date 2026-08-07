@@ -5,7 +5,7 @@ import "../styles/Header.css";
 const base = import.meta.env.BASE_URL;
 // Enlaces visibles en la barra principal
 const mainNavItems = [
-{ name: "Inicio", href: `${base}/` },
+{ name: "Inicio", href: `${base}/index` },
   { name: "Sucursales", href: `${base}/sucursales/` },
   { name: "Contacto", href: `${base}/contacto/` },
 ];
@@ -30,7 +30,7 @@ const drawerItems = [
       </button>
 
       <!-- Logo -->
-      <a href=`${base}/` class="logo">
+      <a href=`${base}/index` class="logo">
         <Image src={myLogo} alt="Logo Frich" class="logo-img" />
       </a>
     </div>
