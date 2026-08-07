@@ -4,5 +4,5 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 site: 'https://alangotzo.github.io',
-base: '/frich-page'
+base: '/frich-page',
 });

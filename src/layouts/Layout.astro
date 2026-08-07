@@ -1,29 +1,45 @@
+---
+// src/layouts/Layout.astro
+import '../styles/Main.css';
+import '../styles/Hero.css';
+import '../styles/Header.css';
+import '../styles/Footer.css';
+
+import '../styles/ayuda.css';
+import '../styles/contacto.css';
+import '../styles/delivery.css';
+import '../styles/nosotros.css';
+import '../styles/sucursales.css';
+import '../styles/trabaja.css';
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Frich 'n Fries</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg`} />
+        <link rel="icon" href={`${baseUrl}/favicon.ico`} />
+        <meta name="generator" content={Astro.generator} />
+        <title>Frich 'n Fries</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<slot />
-	</body>
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-	
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>
 
 <style is:global>
